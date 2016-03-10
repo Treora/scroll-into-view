@@ -32,5 +32,10 @@ Currently supported options:
 - horizontal: scalar between 0 and 1. Default = 0. Functions like vertical.
 - center: boolean. Default = false. Forces vertical = horizontal = 0.5.
 
+## See also
+A roughly equivalent but more fancy version, that animates the scrolling, has been made by KoryNunn. You may wish to use [that implementation][3] instead. Note that that one is packaged as `scroll-into-view` in NPM, and this implementation as `@treora/scroll-into-view`.
+
+
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
 [2]: https://www.w3.org/Bugs/Public/show_bug.cgi?id=17152
+[3]: https://github.com/KoryNunn/scroll-into-view

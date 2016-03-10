@@ -1,5 +1,5 @@
 {
-  "name": "scroll-into-view",
+  "name": "@treora/scroll-into-view",
   "version": "0.1.0",
   "description": "Polyfill to improve Element.scrollIntoView()",
   "main": "polyfill.js",
