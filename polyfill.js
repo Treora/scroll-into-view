@@ -1,6 +1,6 @@
-// Polyfill to Element.scrollIntoView()
+// Polyfill to improve Element.scrollIntoView()
 
-(function () {
+var scrollIntoView = (function () {
 
 // Original implementation is used for backwards compatibility
 var scrollIntoView_original = Element.prototype.scrollIntoView;
@@ -25,6 +25,7 @@ function scrollIntoView(options) {
     if (options.block === "start")  options.vertical = 0.0;
     else if (options.block === "end")  options.vertical = 0.0;
     else if (options.vertical === undefined)  options.vertical = 0.0;
+
     if (options.horizontal === undefined)  options.horizontal = 0.0;
   }
 
@@ -46,7 +47,18 @@ function scrollIntoView(options) {
   }
 }
 
-// Hook the polyfill.
-Element.prototype.scrollIntoView = scrollIntoView;
+// Add a method that replaces the browser's implementation.
+function installPolyfill() {
+  Element.prototype.scrollIntoView = scrollIntoView;
+}
+scrollIntoView.installPolyfill = installPolyfill;
+
+return scrollIntoView;
 
 })();
+
+
+// CommonJS/Node support.
+if (module !== undefined && module.exports) {
+  module.exports = scrollIntoView;
+}
