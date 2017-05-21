@@ -59,6 +59,6 @@ return scrollIntoView;
 
 
 // CommonJS/Node support.
-if (module !== undefined && module.exports) {
+if (typeof module !== 'undefined' && module.exports) {
   module.exports = scrollIntoView;
 }
