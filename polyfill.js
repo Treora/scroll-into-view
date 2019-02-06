@@ -32,9 +32,14 @@ function scrollIntoView(options) {
   // Fetch positional information.
   var rect = this.getBoundingClientRect();
 
+  // Read the viewport height&width, excluding scrollbars. Browser behaviour appears inconsistent
+  // when rendering in quirks mode, but hopefully this formula covers every scenario.
+  var viewPortHeight = document.documentElement.clientHeight || document.body.clientHeight;
+  var viewPortWidth = document.documentElement.clientWidth || document.body.clientWidth;
+
   // Determine location to scroll to.
-  var targetY = window.scrollY + rect.top - (window.innerHeight - this.offsetHeight) * options.vertical;
-  var targetX = window.scrollX + rect.left - (window.innerWidth - this.offsetWidth) * options.horizontal;
+  var targetY = window.scrollY + rect.top - (viewPortHeight - this.offsetHeight) * options.vertical;
+  var targetX = window.scrollX + rect.left - (viewPortWidth - this.offsetWidth) * options.horizontal;
 
   // Scroll.
   window.scroll(targetX, targetY);
