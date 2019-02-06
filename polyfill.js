@@ -22,10 +22,7 @@ function scrollIntoView(options) {
     options.horizontal = 0.5;
   }
   else {
-    if (options.block === "start")  options.vertical = 0.0;
-    else if (options.block === "end")  options.vertical = 0.0;
-    else if (options.vertical === undefined)  options.vertical = 0.0;
-
+    if (options.vertical === undefined)  options.vertical = 0.0;
     if (options.horizontal === undefined)  options.horizontal = 0.0;
   }
 
