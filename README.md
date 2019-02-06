@@ -28,7 +28,7 @@ someElement.scrollIntoView(options);
 Currently supported options:
 - vertical: scalar between 0 and 1. Default = 0. The value 0 aligns the
     top of the element with the top of the view, 1 aligns the bottom with the
-    bottom, and 0.5 (default) puts the center in the center.
+    bottom, and 0.5 puts the center in the center.
 - horizontal: scalar between 0 and 1. Default = 0. Functions like vertical.
 - center: boolean. Default = false. Forces vertical = horizontal = 0.5.
 
